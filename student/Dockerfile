@@ -8,7 +8,7 @@ RUN yes | unminimize \
 # Pre-install these packages
 RUN apt-get update \
   && apt-get install -y \
-  bash \
+  man-db \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
