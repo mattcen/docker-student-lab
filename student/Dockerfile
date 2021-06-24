@@ -9,6 +9,7 @@ RUN yes | unminimize \
 RUN apt-get update \
   && apt-get install -y \
   man-db \
+  net-tools iproute2 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
@@ -18,5 +19,8 @@ RUN apt-get update \
 RUN apt-get update && apt-get -dy install \
   nano \
   nginx
+
+# Fake a sane hostname in the shell prompt
+RUN sed -i 's/\\w/\\u.scouthack/' /etc/bash.bashrc
 
 EXPOSE 80 22
