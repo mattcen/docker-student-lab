@@ -18,6 +18,7 @@ RUN apt-get update \
 # cache and required packages.
 RUN apt-get update && apt-get -dy install \
   nano \
+  apache2 \
   nginx
 
 # Fake a sane hostname in the shell prompt
