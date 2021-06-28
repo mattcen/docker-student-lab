@@ -21,4 +21,6 @@ RUN apt-get update && apt-get -dy install \
   apache2 \
   nginx
 
+RUN echo 'Acquire::http { Proxy "http://aegis:3142"; };' >> /etc/apt/apt.conf.d/01proxy
+
 EXPOSE 80 22
