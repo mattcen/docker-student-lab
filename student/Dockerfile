@@ -21,7 +21,4 @@ RUN apt-get update && apt-get -dy install \
   apache2 \
   nginx
 
-# Fake a sane hostname in the shell prompt
-RUN sed -i 's/\\h/\\u.scouthack/' /etc/skel/.bashrc /root/.bashrc
-
 EXPOSE 80 22
